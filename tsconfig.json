@@ -17,7 +17,7 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "react-jsx",
+    "jsx": "preserve",
     "paths": {
       "@common": [
         "framework/common"
@@ -39,19 +39,16 @@
       ],
       "@lib/*": [
         "lib/*"
-      ],
-      "react": [
-        "./node_modules/@types/react"
       ]
     },
     "incremental": true
   },
   "include": [
     "next-env.d.ts",
+    ".next/types/**/*.ts",
     "**/*.ts",
     "**/*.tsx",
-    "types/**/*",
-    "framework/shopify/next.config.js"
+    "types/**/*"
   ],
   "exclude": [
     "node_modules"
