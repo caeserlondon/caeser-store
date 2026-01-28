@@ -31,6 +31,8 @@ module.exports = {
 				blue: 'var(--blue)',
 				green: 'var(--green)',
 				red: 'var(--red)',
+				dyellow: 'var(--dyellow)',
+				lyellow: 'var(--lyellow)',
 			},
 			textColor: {
 				base: 'var(--text-base)',
