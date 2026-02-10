@@ -3,10 +3,10 @@ import { Footer, Navbar } from '@components/common';
 import { Sidebar } from '@components/ui';
 import { useUI } from '@components/ui/context';
 import { ApiProvider } from '@framework';
-import { FC } from 'react';
+import { FC, ReactNode } from 'react';
 import style from './Layout.module.css';
 
-const Layout: FC = ({ children }) => {
+const Layout: FC<{children: ReactNode}> = ({ children }) => {
 	const { isSidebarOpen, closeSidebar } = useUI();
 
 	return (
