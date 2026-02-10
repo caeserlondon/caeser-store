@@ -1,57 +1,22 @@
-const { withFrameworkConfig } = require('./framework/common/config');
 
-const baseConfig = {
-	i18n: {
-		locales: ['en-GB', 'es'],
-		defaultLocale: 'en-GB',
-	},
+
+
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  i18n: {
+    locales: ['en-GB', 'es'],
+    defaultLocale: 'en-GB',
+  },
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'cdn.shopify.com',
+        port: '',
+        pathname: '/**',
+      },
+    ],
+  },
 };
 
-const finalConfig = withFrameworkConfig({
-	framework: {
-		name: process.env.NEXT_PUBLIC_FRAMEWORK,
-	},
-	...baseConfig,
-});
-
-// !!!!  To avoid logging in production
-if (process.env.NODE_ENV === 'development') {
-	console.log('next.config.js', JSON.stringify(finalConfig, null, 2));
-}
-
-module.exports = finalConfig;
-
-// const { withFrameworkConfig } = require('./framework/common/config');
-
-// module.exports = withFrameworkConfig({
-// 	framework: {
-// 		name: process.env.NEXT_PUBLIC_FRAMEWORK,
-// 	},
-// 	i18n: {
-// 		locales: ['en-GB', 'es'],
-// 		defaultLocale: 'en-GB',
-// 	},
-// });
-
-// console.log('next.config.js', JSON.stringify(module.exports, null, 2));
-
-// import type { NextConfig } from 'next';
-
-// const nextConfig: NextConfig = {
-//   i18n: {
-//     locales: ['en-GB', 'es'],
-//     defaultLocale: 'en-GB',
-//   },
-//   images: {
-//     remotePatterns: [
-//       {
-//         protocol: 'https',
-//         hostname: 'cdn.shopify.com',
-//         port: '',
-//         pathname: '/**',
-//       },
-//     ],
-//   },
-// };
-
-// export default nextConfig;
+module.exports = nextConfig;
