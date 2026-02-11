@@ -1,34 +1,24 @@
 .root {
-	@apply grid gap-0 grid-cols-1;
+	@apply grid gap-0 grid-cols-1 lg:grid-cols-3 lg:grid-rows-2;
+}
 
-	@screen lg {
-		@apply grid-cols-3 grid-rows-2;
-	}
+.root > * {
+	@apply row-span-1 overflow-hidden;
+	max-height: 800px;
+}
 
-	& > * {
-		@apply row-span-1 overflow-hidden;
-		max-height: 800px;
-
-		@screen lg {
-			height: inherit;
-		}
+@screen lg {
+	.root > * {
+		height: inherit;
 	}
 }
 
-.layoutA {
-	& > *:nth-child(6n + 1),
-	& > *:nth-child(6n + 5) {
-		@screen lg {
-			@apply col-span-2 row-span-2;
-		}
-	}
+.layoutA > *:nth-child(6n + 1),
+.layoutA > *:nth-child(6n + 5) {
+	@apply lg:col-span-2 lg:row-span-2;
 }
 
-.layoutB {
-	& > *:nth-child(6n + 2),
-	& > *:nth-child(6n + 4) {
-		@screen lg {
-			@apply col-span-2 row-span-2;
-		}
-	}
+.layoutB > *:nth-child(6n + 2),
+.layoutB > *:nth-child(6n + 4) {
+	@apply lg:col-span-2 lg:row-span-2;
 }
