@@ -57,7 +57,7 @@ const CartItem = ({
 					width={150}
 					height={150}
 					src={item.variant.image!.url}
-					unoptimized
+					alt={item.name}
 				/>
 			</div>
 			<div className='flex-1 flex flex-col text-base'>
@@ -93,6 +93,7 @@ const CartItem = ({
 					<label>
 						<input
 							type='number'
+							aria-label='quantity'
 							max={99}
 							min={0}
 							className={s.quantity}
