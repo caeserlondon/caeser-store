@@ -1,3 +1,4 @@
+/* assets/main.css */
 @import './base.css';
 
 @tailwind base;
@@ -6,8 +7,11 @@
 
 @layer components {
 	.fit {
-		min-height: calc(100vh - 88px);
+    min-height: calc(100vh - 88px);
 	}
 }
+
+
+
 /* @reference "tailwindcss"; */
 /* @config "../tailwind.config.js"; */
