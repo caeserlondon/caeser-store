@@ -1,4 +1,4 @@
-import { createContext, FC, useContext, useMemo, useReducer } from 'react';
+import { createContext, FC, ReactNode, useContext, useMemo, useReducer } from 'react';
 
 export interface StateModifiers {
 	openSidebar: () => void;
@@ -42,7 +42,7 @@ function uiReducer(state: StateValues, action: Action) {
 	}
 }
 
-export const UIProvider: FC = ({ children }) => {
+export const UIProvider: FC<{children: ReactNode}> = ({ children }) => {
 	const [state, dispatch] = useReducer(uiReducer, initialState);
 
 	const openSidebar = () => dispatch({ type: 'OPEN_SIDEBAR' });
