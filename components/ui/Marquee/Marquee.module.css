@@ -1,4 +1,4 @@
-.root {
+/* .root {
 	@apply bg-black;
 	height: 320px;
 }
@@ -13,4 +13,31 @@
 	& > * {
 		@apply flex-1 px-16 py-4 relative;
 	}
+} */
+.root {
+  @apply w-full overflow-hidden;
+  height: 320px;
+  background-color: black;
+}
+
+.secondary {
+  background-color: white;
+}
+
+/* Real marquee container */
+.container {
+  @apply flex flex-row items-center whitespace-nowrap;
+}
+
+.container > * {
+  @apply px-16 py-4 flex-shrink-0 relative;
+}
+
+/* SSR / pre-mount fallback */
+.fallback {
+  @apply flex flex-row overflow-hidden;
+}
+
+.fallbackItem {
+  @apply px-16 py-4 flex-shrink-0 relative;
 }
